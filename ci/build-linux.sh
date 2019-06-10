@@ -12,7 +12,7 @@ tar -xf bsf_2019.06.06_linux.tar.gz -C bsf
 vcpkg install libsquish physfs --triplet x64-linux
 
 cmake -Dbsf_INSTALL_DIR=`pwd`/bsf \
-      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DCMAKE_BUILD_TYPE=Release \
       -DREGOTH_USE_SYSTEM_BSF=On \
       -DSKIP_AUTOMATE_VCPKG=On \
       -DCMAKE_TOOLCHAIN_FILE="${VCPKG_INSTALLATION_ROOT}/scripts/buildsystems/vcpkg.cmake" \
