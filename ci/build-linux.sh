@@ -15,7 +15,7 @@ cmake -Dbsf_INSTALL_DIR=`pwd`/bsf \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DREGOTH_USE_SYSTEM_BSF=On \
       -DSKIP_AUTOMATE_VCPKG=On \
-      -DCMAKE_TOOLCHAIN_FILE="$(VCPKG_ROOT)/scripts/buildsystems/vcpkg.cmake" \
+      -DCMAKE_TOOLCHAIN_FILE="${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" \
       ../..
 
 cmake --build . --config RelWithDebInfo --parallel
