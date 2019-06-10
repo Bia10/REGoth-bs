@@ -27,6 +27,15 @@ jobs:
           export CXX=g++-8
           cd ci
           ./build-linux.sh
+          ./pack-release-linux.sh
+    - task: CopyFiles@2
+      inputs:
+        contents: 'REGoth-ci-build\**'
+        targetFolder: $(Build.ArtifactStagingDirectory)
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: $(Build.ArtifactStagingDirectory)
+        artifactName: REGoth-ci-bin
 
 #  - job: macOS
 #    pool:
@@ -50,3 +59,12 @@ jobs:
     - bash: |
           cd ci
           ./build-windows.sh
+          ./pack-release-windows.sh
+    - task: CopyFiles@2
+      inputs:
+        contents: 'REGoth-ci-build\**'
+        targetFolder: $(Build.ArtifactStagingDirectory)
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: $(Build.ArtifactStagingDirectory)
+        artifactName: REGoth-ci-bin
