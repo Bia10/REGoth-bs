@@ -45,7 +45,6 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
     # So that REGoth-Symbols will show up in the bs:f-crash handler
     add_compile_options(-rdynamic)
 
-    # Required by the libsquish vcpkg package
     add_compile_options(-fopenmp)
     add_link_options(-fopenmp)
 endif()
@@ -53,6 +52,9 @@ endif()
 ###############################################################################
 #                            Add external libraries                           #
 ###############################################################################
+
+# Required by the libsquish vcpkg package
+find_package(OpenMP REQUIRED) # Find the package
 
 # Let CMake know where to find the Findbsf.cmake file
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
