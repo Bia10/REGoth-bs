@@ -21,10 +21,8 @@ jobs:
     steps:
     - bash: |
           sudo apt-get update
-          sudo apt-get install uuid-dev libgl1-mesa-dev libglu1-mesa-dev mesa-common-dev
-          sudo apt-get install libx11-dev libxcursor-dev libxrandr-dev libxi-dev
           sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-          sudo apt-get install gcc-8 g++-8
+          sudo apt-get install uuid-dev libgl1-mesa-dev libglu1-mesa-dev mesa-common-dev libx11-dev libxcursor-dev libxrandr-dev libxi-dev gcc-8 g++-8
           export CC=gcc-8
           export CXX=g++-8
           cd ci
