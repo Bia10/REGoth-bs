@@ -1,3 +1,5 @@
+set -e
+
 INTERNAL_DIR=REGoth-ci-build
 
 rm -rf ./$INTERNAL_DIR
