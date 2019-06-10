@@ -47,6 +47,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
 
     # Required by the libsquish vcpkg package
     add_compile_options(-fopenmp)
+    add_link_options(-fopenmp)
 endif()
 
 ###############################################################################
