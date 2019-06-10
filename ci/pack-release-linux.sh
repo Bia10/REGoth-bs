@@ -2,7 +2,6 @@ set -e
 
 INTERNAL_DIR=REGoth-ci-build
 
-rm -f ./$ZIPNAME
 rm -rf ./$INTERNAL_DIR
 
 mkdir $INTERNAL_DIR
