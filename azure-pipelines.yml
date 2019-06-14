@@ -41,6 +41,15 @@ jobs:
             ./build-linux.sh
 
     - task: Bash@3
+      displayName: List build directory
+      inputs:
+        targetType: 'inline'
+        script: |
+            set -e
+            cd ci
+            find build/
+
+    - task: Bash@3
       displayName: Gather build artifacts
       inputs:
         targetType: 'inline'
@@ -84,6 +93,16 @@ jobs:
             set -e
             cd ci
             ./build-windows.sh
+
+    - task: Bash@3
+      displayName: List build directory
+      inputs:
+        targetType: 'inline'
+        script: |
+            set -e
+            cd ci
+            find build/
+            
     - task: Bash@3
       displayName: Gather build artifacts
       inputs:
@@ -92,10 +111,12 @@ jobs:
             set -e
             cd ci
             ./pack-release-windows.sh
+
     - task: CopyFiles@2
       inputs:
         contents: 'ci/artifacts\**'
         targetFolder: $(Build.ArtifactStagingDirectory)
+
     - task: PublishBuildArtifacts@1
       inputs:
         pathtoPublish: $(Build.ArtifactStagingDirectory)
