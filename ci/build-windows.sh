@@ -7,6 +7,7 @@ cd build
 curl -O https://dilborceisv8p.cloudfront.net/bsf_2019.06.07_win64.zip
 unzip bsf_2019.06.07_win64.zip -d bsf
 
+vcpkg update
 vcpkg install libsquish physfs --triplet x64-windows
 
 cmake -Dbsf_INSTALL_DIR=`pwd`/bsf \
