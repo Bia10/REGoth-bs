@@ -30,7 +30,7 @@ jobs:
           ./pack-release-linux.sh
     - task: CopyFiles@2
       inputs:
-        contents: 'ci/REGoth-ci-build\**'
+        contents: 'ci/artifacts\**'
         targetFolder: $(Build.ArtifactStagingDirectory)
     - task: PublishBuildArtifacts@1
       inputs:
@@ -62,7 +62,7 @@ jobs:
           ./pack-release-windows.sh
     - task: CopyFiles@2
       inputs:
-        contents: 'ci/REGoth-ci-build\**'
+        contents: 'ci/artifacts\**'
         targetFolder: $(Build.ArtifactStagingDirectory)
     - task: PublishBuildArtifacts@1
       inputs:
