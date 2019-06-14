@@ -12,4 +12,3 @@ cp -r ../content $INTERNAL_DIR/
 cp -r build/bin/*.pdb $INTERNAL_DIR/
 cp -r build/bin/RelWithDebInfo/*.exe $INTERNAL_DIR/
 cp -r build/bin/RelWithDebInfo/*.dll $INTERNAL_DIR/
-cp -r build/bin/RelWithDebInfo/*.pdb $INTERNAL_DIR/
