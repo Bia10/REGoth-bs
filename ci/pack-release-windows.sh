@@ -1,5 +1,8 @@
 set -e
 
+echo Current Working Directory:
+echo `pwd`
+
 INTERNAL_DIR=artifacts
 
 rm -rf ./$INTERNAL_DIR
