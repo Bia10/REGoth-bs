@@ -20,6 +20,7 @@ jobs:
   
     steps:
     - task: Bash@3
+      displayName: Install Packages via apt-get
       inputs:
         targetType: 'inline'
         script: |
@@ -29,6 +30,7 @@ jobs:
           sudo apt-get install uuid-dev libgl1-mesa-dev libglu1-mesa-dev mesa-common-dev libx11-dev libxcursor-dev libxrandr-dev libxi-dev gcc-8 g++-8
     
     - task: Bash@3
+      displayName: Build REGoth
       inputs:
         targetType: 'inline'
         script: |
@@ -39,6 +41,7 @@ jobs:
             ./build-linux.sh
 
     - task: Bash@3
+      displayName: Gather build artifacts
       inputs:
         targetType: 'inline'
         script: |
@@ -73,12 +76,22 @@ jobs:
       vmImage: 'vs2017-win2016'
 
     steps:
-    - bash: |
-          set -e
-          cd ci
-          ./build-windows.sh
-          ./pack-release-windows.sh
-          find build/
+    - task: Bash@3
+      displayName: Build REGoth
+      inputs:
+        targetType: 'inline'
+        script: |
+            set -e
+            cd ci
+            ./build-windows.sh
+    - task: Bash@3
+      displayName: Gather build artifacts
+      inputs:
+        targetType: 'inline'
+        script: |
+            set -e
+            cd ci
+            ./pack-release-windows.sh
     - task: CopyFiles@2
       inputs:
         contents: 'ci/artifacts\**'
