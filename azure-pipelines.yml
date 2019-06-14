@@ -57,6 +57,8 @@ jobs:
             set -e
             cd ci
             ./pack-release-linux.sh
+            find artifacts/
+            
     - task: CopyFiles@2
       inputs:
         contents: 'ci/artifacts\**'
@@ -111,6 +113,7 @@ jobs:
             set -e
             cd ci
             ./pack-release-windows.sh
+            find artifacts/
 
     - task: CopyFiles@2
       inputs:
