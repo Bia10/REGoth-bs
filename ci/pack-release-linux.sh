@@ -1,6 +1,6 @@
 set -e
 
-INTERNAL_DIR=REGoth-ci-build
+INTERNAL_DIR=artifacts
 
 rm -rf ./$INTERNAL_DIR
 
