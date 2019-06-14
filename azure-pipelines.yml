@@ -28,6 +28,7 @@ jobs:
           cd ci
           ./build-linux.sh
           ./pack-release-linux.sh
+          find build/
     - task: CopyFiles@2
       inputs:
         contents: 'ci/artifacts\**'
@@ -60,6 +61,7 @@ jobs:
           cd ci
           ./build-windows.sh
           ./pack-release-windows.sh
+          find build/
     - task: CopyFiles@2
       inputs:
         contents: 'ci/artifacts\**'
