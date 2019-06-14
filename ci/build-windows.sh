@@ -18,6 +18,6 @@ cmake -Dbsf_INSTALL_DIR=`pwd`/bsf \
       -A x64 \
       ../..
 
-cmake --build . --config RelWithDebInfo --parallel
+cmake --build . --config Release --parallel
 
 cd ..

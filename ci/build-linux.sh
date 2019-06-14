@@ -19,6 +19,6 @@ cmake -Dbsf_INSTALL_DIR=`pwd`/bsf \
       -DCMAKE_TOOLCHAIN_FILE="${VCPKG_INSTALLATION_ROOT}/scripts/buildsystems/vcpkg.cmake" \
       ../..
 
-cmake --build . --config RelWithDebInfo --parallel
+cmake --build . --config Release --parallel
 
 cd ..
